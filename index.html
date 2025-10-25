@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Nosso Casamento</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="brand">Nosso Casamento</div>
+		<button class="nav-toggle" aria-label="Abrir menu">
+			<span class="hamburger" aria-hidden="true"></span>
+		</button>
+	</header>
+
+	<nav class="nav-drawer" aria-hidden="true">
+		<button class="close-menu" aria-label="Fechar menu">
+			<span class="close-icon" aria-hidden="true">&times;</span>
+		</button>
+		<a href="pages/convite.html">Convite</a>
+		<a href="pages/informacoes.html">Informações</a>
+		<a href="pages/presente.html">Presentes</a>
+		<a href="pages/contato.html">Contato</a>
+	</nav>
+
+	<div class="menu-overlay" aria-hidden="true"></div>
+
+	<main>
+		<!-- Banner -->
+		<section class="banner">
+			<div class="banner-inner">
+				<h1>Estamos nos casando!</h1>
+				<p>Guarde a data — venha celebrar conosco</p>
+			</div>
+		</section>
+
+		<!-- Contador -->
+		<section class="container">
+			<div class="countdown">
+		<h2>Faltam até 19/12/2026 18:00</h2>
+		<p id="target-info" style="margin-bottom:12px;color:#666;font-size:14px">Data alvo: 19/12/2026 18:00</p>
+
+				<div class="time-grid" aria-live="polite">
+					<div class="time-cell">
+						<div class="num" id="years">0</div>
+						<div class="label">Ano(s)</div>
+					</div>
+					<div class="time-cell">
+						<div class="num" id="months">0</div>
+						<div class="label">Mês(es)</div>
+					</div>
+					<div class="time-cell">
+						<div class="num" id="days">0</div>
+						<div class="label">Dia(s)</div>
+					</div>
+					<div class="time-cell">
+						<div class="num" id="hours">00</div>
+						<div class="label">Horas</div>
+					</div>
+					<div class="time-cell">
+						<div class="num" id="minutes">00</div>
+						<div class="label">Minutos</div>
+					</div>
+					<div class="time-cell">
+						<div class="num" id="seconds">00</div>
+						<div class="label">Segundos</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="js/script.js"></script>
+</body>
+</html>

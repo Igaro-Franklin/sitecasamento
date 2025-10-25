@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contato - Nosso Casamento</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .form-group{margin-bottom:20px}
+        .form-label{display:block;margin-bottom:8px;color:var(--dark);font-weight:500}
+        .form-input{width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-size:16px}
+        .form-input:focus{border-color:var(--accent);outline:none}
+        textarea.form-input{min-height:120px;resize:vertical}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">Nosso Casamento</div>
+        <button class="nav-toggle" aria-label="Abrir menu">
+            <span class="hamburger" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <nav class="nav-drawer" aria-hidden="true">
+        <button class="close-menu" aria-label="Fechar menu">
+            <span class="close-icon" aria-hidden="true">&times;</span>
+        </button>
+        <a href="../index.html">Início</a>
+        <a href="convite.html">Convite</a>
+        <a href="informacoes.html">Informações</a>
+        <a href="presente.html">Presentes</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="menu-overlay" aria-hidden="true"></div>
+
+    <main>
+        <header class="page-header">
+            <h1 class="page-title">Contato</h1>
+            <p class="page-subtitle">Envie sua mensagem ou confirme sua presença</p>
+        </header>
+
+        <section class="container">
+            <div class="page-grid">
+                <!-- Formulário de Contato -->
+                <div class="card">
+                    <h2 class="card-title">Envie sua Mensagem</h2>
+                    <form class="card-content" id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Nome</label>
+                            <input type="text" class="form-input" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">E-mail</label>
+                            <input type="email" class="form-input" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subject">Assunto</label>
+                            <select class="form-input" id="subject" name="subject" required>
+                                <option value="">Selecione...</option>
+                                <option value="confirmar">Confirmação de Presença</option>
+                                <option value="duvida">Dúvida</option>
+                                <option value="mensagem">Mensagem para os Noivos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">Mensagem</label>
+                            <textarea class="form-input" id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+
+                <!-- Informações de Contato -->
+                <div class="card">
+                    <h2 class="card-title">Outras Formas de Contato</h2>
+                    <div class="card-content">
+                        <p>Se preferir, você também pode entrar em contato através de:</p>
+                        <ul class="guide-list">
+                            <li class="guide-item">
+                                <h3 class="guide-title">WhatsApp</h3>
+                                <p class="guide-text">Em breve</p>
+                            </li>
+                            <li class="guide-item">
+                                <h3 class="guide-title">E-mail</h3>
+                                <p class="guide-text">Em breve</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

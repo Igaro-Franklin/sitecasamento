@@ -1,0 +1,260 @@
+/* Estilos principais para o site de casamento */
+:root{
+  --accent:#b35f5f;
+  --dark:#222;
+  --light:#fff;
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+    color:var(--dark);
+    background:#faf9f8
+}
+
+
+/* Header / Nav */
+.site-header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 18px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+    backdrop-filter:blur(4px);
+    z-index:40
+}
+
+.brand{
+    font-weight:700;
+    color:var(--dark)
+}
+
+.nav-toggle{
+    background:none;
+    border:0;
+    cursor:pointer;
+    padding:8px
+}
+
+.hamburger{
+    width:26px;
+    height:2px;
+    background:var(--dark);
+    display:block;
+    position:relative
+}
+
+.hamburger::before,.hamburger::after{
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    height:2px;
+    background:var(--dark)
+}
+
+.hamburger::before{
+    top:-7px
+}
+
+.hamburger::after{
+    top:7px
+}
+
+
+.menu-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .28s ease;
+    z-index:45
+}
+
+.menu-overlay.visible{
+    opacity:1;
+    visibility:visible
+}
+
+
+.nav-drawer{
+    position:fixed;
+    top:0;
+    right:-320px;
+    width:280px;
+    height:100vh;
+    background:var(--light);
+    box-shadow:-8px 0 24px rgba(0,0,0,.12);
+    padding:60px 18px;
+    transition:right .28s ease;
+    z-index:50
+}
+
+.nav-drawer.open{
+    right:0
+}
+
+.nav-drawer a{
+    display:block;
+    padding:12px 6px;
+    color:var(--dark);
+    text-decoration:none;
+    border-bottom:1px dashed #eee
+}
+
+
+.close-menu{
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:none;
+    border:0;
+    padding:8px;
+    cursor:pointer;
+    color:#666;
+    font-size:24px;
+    line-height:1
+}
+
+.close-menu:hover{
+    color:var(--dark)
+}
+
+.close-icon{
+    display:block;
+    transform:scale(1.2)
+}
+
+
+/* Banner */
+.banner{
+    height:70vh;
+    min-height:380px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--light);
+    position:relative;
+    overflow:hidden
+}
+
+.banner::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:url('../images/banner.jpg') center/cover no-repeat, linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35));
+    filter:saturate(.95);
+    opacity:1
+}
+
+.banner .banner-inner{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:0 18px
+}
+
+.banner h1{
+    font-size:clamp(28px,6vw,48px);
+    margin:0 0 6px
+}
+
+.banner p{
+    margin:0;
+    font-size:18px;
+    opacity:.95
+}
+
+
+/* Seções */
+.container{
+    max-width:980px;
+    margin:0 auto;
+    padding:100px 18px 64px
+}
+
+.countdown{
+    background:var(--light);
+    border-radius:12px;
+    padding:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+    text-align:center
+}
+
+.countdown h2{
+    margin:0 0 12px
+}
+
+.countdown .time-grid{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap
+}
+
+.time-cell{
+    min-width:90px;
+    background:#fff;
+    border-radius:10px;
+    padding:12px 10px;
+    box-shadow:0 4px 18px rgba(0,0,0,.04)
+}
+
+.time-cell .num{
+    font-size:22px;
+    font-weight:700
+}
+
+.time-cell .label{
+    font-size:12px;
+    color:#666;
+    margin-top:6px
+}
+
+
+/* Footer spacing */
+main{
+    padding-top:68px
+}
+
+/* Páginas internas */
+.page-header{background:var(--light);padding:40px 18px;text-align:center;border-bottom:1px solid rgba(0,0,0,.06)}
+.page-title{margin:0;font-size:32px;color:var(--dark)}
+.page-subtitle{margin:8px 0 0;color:#666;font-size:18px}
+
+/* Botões e downloads */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--accent);color:var(--light);text-decoration:none;border-radius:6px;border:0;font-size:16px;cursor:pointer;transition:all .2s ease}
+.btn:hover{background:#945151;transform:translateY(-1px)}
+.btn-outline{background:none;border:2px solid var(--accent);color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:var(--light)}
+.btn svg{width:20px;height:20px}
+
+/* Cards e seções */
+.card{background:var(--light);border-radius:12px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.06);margin-bottom:24px}
+.card-title{margin:0 0 16px;font-size:24px;color:var(--dark)}
+.card-content{color:#444;line-height:1.6}
+
+/* Guias e regras */
+.guide-list{list-style:none;padding:0;margin:0}
+.guide-item{padding:16px 0;border-bottom:1px solid #eee}
+.guide-item:last-child{border:0}
+.guide-title{font-weight:600;margin:0 0 8px;color:var(--dark)}
+.guide-text{margin:0;color:#666}
+
+/* Layout responsivo */
+.page-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px}
+
+@media (max-width:560px){
+  .nav-drawer{width:100vw}
+  .time-cell{min-width:80px}
+  .page-header{padding:30px 18px}
+  .page-title{font-size:28px}
+  .container{padding:64px 18px}
+}
