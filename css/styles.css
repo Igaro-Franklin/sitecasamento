@@ -87,18 +87,20 @@ body{
 .nav-drawer{
     position:fixed;
     top:0;
-    right:-320px;
+    right:0;
     width:280px;
     height:100vh;
     background:var(--light);
     box-shadow:-8px 0 24px rgba(0,0,0,.12);
     padding:60px 18px;
-    transition:right .28s ease;
+    /* usar transform para entrada/saída: evita problemas com larguras dinâmicas */
+    transform: translateX(100%);
+    transition:transform .28s ease;
     z-index:50
 }
 
 .nav-drawer.open{
-    right:0
+    transform: translateX(0);
 }
 
 .nav-drawer a{
@@ -180,6 +182,38 @@ body{
     padding:100px 18px 64px
 }
 
+/* Ajustes de responsividade adicionais */
+.brand{font-size:clamp(16px,2.2vw,22px)}
+.site-header{padding:clamp(8px,1.2vw,18px)}
+
+/* Time grid mais responsivo: usar grid em telas pequenas para empilhar melhor */
+.countdown .time-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(86px,1fr));
+        gap:12px;
+        justify-items:center;
+}
+
+/* Botões ocupam largura total em telas pequenas */
+.btn{white-space:nowrap}
+.btn.full{width:100%;justify-content:center}
+
+/* Banner adapta posição da imagem em telas pequenas */
+.banner::before{background-position: center center}
+
+/* Melhor leitura em telas grandes */
+@media (min-width:900px){
+    .container{max-width:1200px;padding:120px 28px 80px}
+    .card{padding:32px}
+    .banner{height:75vh}
+    .nav-drawer{width:340px}
+}
+
+@media (min-width:1200px){
+    .banner h1{font-size:clamp(34px,4vw,64px)}
+    .page-title{font-size:36px}
+}
+
 .countdown{
     background:var(--light);
     border-radius:12px;
@@ -257,4 +291,14 @@ main{
   .page-header{padding:30px 18px}
   .page-title{font-size:28px}
   .container{padding:64px 18px}
+}
+
+/* Ajustes muito pequenos (telefone) */
+@media (max-width:420px){
+    .banner{min-height:320px}
+    .banner h1{font-size:22px}
+    .btn{font-size:15px;padding:10px 14px}
+    .btn svg{width:18px;height:18px}
+    .container{padding:48px 12px}
+    .time-cell{min-width:72px;padding:10px}
 }
